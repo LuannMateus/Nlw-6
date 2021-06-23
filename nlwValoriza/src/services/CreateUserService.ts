@@ -26,7 +26,7 @@ class CreateUserService {
     try {
       await usersRepository.save(user);
     } catch (error) {
-      throw new Error('Cold not save.');
+      throw new Error('Could not save.');
     }
 
     return user;
