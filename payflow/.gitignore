@@ -1,6 +1,10 @@
 # Vscode related
 .vscode
 
+# firebase google-services
+# Do you need add your google-services.json of firebase in android/app
+google-services.json
+
 # Miscellaneous
 *.class
 *.log
