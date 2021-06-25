@@ -1,9 +1,11 @@
 import { Request, Response } from 'express';
-import { CreateComplimentService } from '../services/CreateComplimentService';
+import { CreateComplimentService } from '../services/Compliment/CreateComplimentService';
 
 class CreateComplimentController {
   async handle(request: Request, response: Response) {
-    const { tag_id, user_sender, user_receiver, message } = request.body;
+    const { tag_id, user_receiver, message } = request.body;
+
+    const { user_id: user_sender } = request;
 
     const createComplimentService = new CreateComplimentService();
 

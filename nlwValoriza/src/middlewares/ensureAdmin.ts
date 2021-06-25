@@ -1,11 +1,16 @@
 import { Request, Response, NextFunction } from 'express';
+import { GetUserService } from '../services/User/GetUserByIdService';
 
-export function ensureAdmin(
-  _request: Request,
+export async function ensureAdmin(
+  request: Request,
   response: Response,
   next: NextFunction
 ) {
-  const admin = true;
+  const { user_id } = request;
+
+  const getUserService = new GetUserService();
+
+  const { admin } = await getUserService.findById(user_id);
 
   if (admin) {
     return next();
