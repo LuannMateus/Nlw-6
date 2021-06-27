@@ -22,8 +22,6 @@ class LoginController {
       );
 
       authController.setUser(context: context, user: user);
-
-      print(response);
     } catch (error) {
       print(error);
     }

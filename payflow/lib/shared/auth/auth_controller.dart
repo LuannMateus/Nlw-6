@@ -5,14 +5,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 class AuthController {
   UserModel? _user;
 
-  UserModel get user => _user!;
+  UserModel? get user => _user;
 
   void setUser({required BuildContext context, UserModel? user}) {
     if (user != null) {
       saveUser(user);
       _user = user;
 
-      Navigator.pushReplacementNamed(context, "/home");
+      Navigator.pushReplacementNamed(context, "/home", arguments: user);
     } else {
       Navigator.pushReplacementNamed(context, "/login");
     }
